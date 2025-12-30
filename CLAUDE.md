@@ -308,7 +308,7 @@ Lo-fi music has specific characteristics that inform analysis and mapping:
 - [x] Reaction-diffusion with frequency band modulation
 - [x] Multi-layer composition (background + midground + foreground)
 - [x] State machine with section-based mode switching
-- [ ] Trail/echo system with temporal memory
+- [x] Trail/echo system with temporal memory
 - [ ] Waveform terrain (3D or 2.5D)
 
 ## Resources
