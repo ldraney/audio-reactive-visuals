@@ -37,9 +37,9 @@ let analysisData = null;
 let isPlaying = false;
 
 // Particle configuration
-const MAX_PARTICLES = 500;
-const PARTICLE_LIFETIME = 8; // seconds
-const BASE_SPAWN_RATE = 2; // particles per frame when quiet
+const MAX_PARTICLES = 1500;
+const PARTICLE_LIFETIME = 12; // seconds
+const BASE_SPAWN_RATE = 1; // particles per frame when quiet
 
 // Smoothers
 const smoothers = {
@@ -295,7 +295,7 @@ function render() {
   // === FORCE CALCULATIONS ===
 
   // Gravity: bass pulls down
-  const gravityStrength = 100 + bass * 400;
+  const gravityStrength = 300 + bass * 600;
 
   // Wind: mids push horizontally (oscillates with time)
   const windAngle = Math.sin(currentTime * 0.5) * Math.PI * 0.3;
@@ -307,7 +307,7 @@ function render() {
   const turbulenceStrength = highs * 150;
 
   // Damping: less friction when loud
-  const damping = map(rms, 0, 1, 0.96, 0.995);
+  const damping = map(rms, 0, 1, 0.985, 0.998);
 
   // Color: centroid controls temperature
   const baseHue = map(centroid, 0, 1, 240, 30); // Blue to orange
@@ -315,7 +315,7 @@ function render() {
   // === PARTICLE SPAWNING ===
 
   // Continuous spawn from edges
-  const spawnRate = BASE_SPAWN_RATE + rms * 5;
+  const spawnRate = BASE_SPAWN_RATE + rms * 3;
   for (let i = 0; i < spawnRate; i++) {
     // Spawn from top or sides
     const side = Math.random();
