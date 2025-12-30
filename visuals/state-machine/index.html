@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State Machine - Audio Reactive</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0f;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: rgba(20, 20, 30, 0.8);
+      padding: 12px 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    button {
+      background: #3a3a4a;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #4a4a5a;
+    }
+
+    button:active {
+      background: #5a5a6a;
+    }
+
+    .time {
+      color: #888;
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+      min-width: 100px;
+    }
+
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #666;
+      font-size: 18px;
+    }
+
+    .state-indicator {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.5s;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div class="state-indicator" id="stateIndicator">AMBIENT</div>
+
+  <div class="controls">
+    <button id="playPause">Play</button>
+    <span class="time" id="time">0:00 / 0:00</span>
+  </div>
+
+  <div class="loading" id="loading">Loading...</div>
+
+  <audio id="audio" src="../../audio/neon-noir.mp3" preload="auto"></audio>
+
+  <script type="module" src="sketch.js"></script>
+</body>
+</html>
