@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Reactive Visuals</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0a0f;
+      color: #e0e0e0;
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .tagline {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 48px;
+    }
+
+    .intro {
+      margin-bottom: 48px;
+      color: #aaa;
+    }
+
+    .intro p {
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      color: #6ec6ff;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .experiments {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .experiment {
+      display: block;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 20px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .experiment:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .experiment-title {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .experiment-desc {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .experiment-status {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .status-live {
+      background: rgba(100, 200, 100, 0.2);
+      color: #6c6;
+    }
+
+    .status-soon {
+      background: rgba(200, 200, 100, 0.2);
+      color: #aa8;
+    }
+
+    .footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .footer a {
+      color: #888;
+    }
+
+    .note {
+      background: rgba(110, 198, 255, 0.1);
+      border-left: 3px solid #6ec6ff;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Audio Reactive Visuals</h1>
+    <p class="tagline">Exploring the relationship between sound and image</p>
+
+    <div class="intro">
+      <p>
+        Music visualization is not about making things move when sounds happen.
+        It's about finding the <span class="highlight">hidden structure in audio</span>
+        and giving it visual form.
+      </p>
+      <p>
+        This is a collection of experiments exploring how audio features—frequency bands,
+        spectral brightness, rhythmic transients, harmonic content—can drive visual systems
+        in ways that feel alive rather than mechanical.
+      </p>
+    </div>
+
+    <div class="note">
+      Each experiment requires audio to run. Load the page, click play, and watch how
+      the visuals respond to the music's structure.
+    </div>
+
+    <h2>Experiments</h2>
+    <div class="experiments">
+      <a href="visuals/baseline-circle/" class="experiment">
+        <div class="experiment-title">
+          Baseline Circle
+          <span class="experiment-status status-live">Live</span>
+        </div>
+        <div class="experiment-desc">
+          A single circle driven by seven audio features: energy controls size,
+          spectral centroid shifts color temperature, bass adds weight, transients
+          trigger pops, and percussive energy creates jitter.
+        </div>
+      </a>
+
+      <div class="experiment" style="opacity: 0.5; pointer-events: none;">
+        <div class="experiment-title">
+          Frequency Bars
+          <span class="experiment-status status-soon">Coming</span>
+        </div>
+        <div class="experiment-desc">
+          Classic frequency band visualization as a reference baseline.
+        </div>
+      </div>
+
+      <div class="experiment" style="opacity: 0.5; pointer-events: none;">
+        <div class="experiment-title">
+          Particle Physics
+          <span class="experiment-status status-soon">Coming</span>
+        </div>
+        <div class="experiment-desc">
+          Audio becomes forces—bass is gravity, mids are wind, highs are turbulence.
+          Particles follow physics; music shapes their world.
+        </div>
+      </div>
+
+      <div class="experiment" style="opacity: 0.5; pointer-events: none;">
+        <div class="experiment-title">
+          Flow Field
+          <span class="experiment-status status-soon">Coming</span>
+        </div>
+        <div class="experiment-desc">
+          Perlin noise flow with audio-driven parameters—scale, speed, and octaves
+          respond to different frequency bands.
+        </div>
+      </div>
+    </div>
+
+    <h2>The Approach</h2>
+    <div class="intro">
+      <p>
+        All audio analysis happens offline using Python and librosa. We extract
+        features like frequency band energy, spectral centroid, onset strength,
+        chromagram, and harmonic/percussive separation—then export to JSON.
+      </p>
+      <p>
+        The browser loads this pre-computed data and syncs it to audio playback.
+        This allows heavier analysis than real-time FFT, deterministic playback,
+        and the ability to hand-tune mappings.
+      </p>
+      <p>
+        <span class="highlight">Visuals are only as compelling as the mappings that drive them.</span>
+        A sophisticated particle system with naive bass→size mapping feels generic.
+        A simple circle with thoughtful multi-dimensional mapping can feel alive.
+      </p>
+    </div>
+
+    <div class="footer">
+      <a href="https://github.com/ldraney/audio-reactive-visuals">View on GitHub</a>
+    </div>
+  </div>
+</body>
+</html>
