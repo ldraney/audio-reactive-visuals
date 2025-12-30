@@ -304,7 +304,7 @@ Lo-fi music has specific characteristics that inform analysis and mapping:
 - [x] Chromagram color wheel / harmonic visualization
 - [x] Flocking system with audio-modulated behaviors
 - [x] Flow field (Perlin) with audio-driven parameters
-- [ ] Geometric/mandala with beat-synced rotation
+- [x] Geometric/mandala with beat-synced rotation
 - [ ] Reaction-diffusion with frequency band modulation
 - [ ] Multi-layer composition (background + midground + foreground)
 - [ ] State machine with section-based mode switching
