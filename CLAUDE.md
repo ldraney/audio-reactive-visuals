@@ -298,7 +298,7 @@ Lo-fi music has specific characteristics that inform analysis and mapping:
 
 ## Experiments to Build
 
-- [ ] Baseline: single circle, all features mapped to different properties
+- [x] Baseline: single circle, all features mapped to different properties
 - [ ] Frequency band bars (classic, but as a reference)
 - [ ] Particle field with physics forces from audio
 - [ ] Chromagram color wheel / harmonic visualization
