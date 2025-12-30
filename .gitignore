@@ -4,13 +4,11 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Audio files (too large for git)
-audio/*.mp3
+# Large audio files (keep neon-noir.mp3 for demo)
 audio/*.wav
 audio/*.flac
 
-# Analysis output (can be regenerated)
-data/*.json
+# Note: neon-noir.mp3 and neon-noir.json are committed for the live demo
 
 # IDE
 .vscode/
