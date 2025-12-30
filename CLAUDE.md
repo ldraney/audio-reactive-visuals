@@ -306,7 +306,7 @@ Lo-fi music has specific characteristics that inform analysis and mapping:
 - [x] Flow field (Perlin) with audio-driven parameters
 - [x] Geometric/mandala with beat-synced rotation
 - [x] Reaction-diffusion with frequency band modulation
-- [ ] Multi-layer composition (background + midground + foreground)
+- [x] Multi-layer composition (background + midground + foreground)
 - [ ] State machine with section-based mode switching
 - [ ] Trail/echo system with temporal memory
 - [ ] Waveform terrain (3D or 2.5D)
