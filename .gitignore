@@ -1,0 +1,24 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Audio files (too large for git)
+audio/*.mp3
+audio/*.wav
+audio/*.flac
+
+# Analysis output (can be regenerated)
+data/*.json
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Playwright
+.playwright-mcp/
